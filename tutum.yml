@@ -13,7 +13,7 @@ redis:
   tags:
     - staging
 result-app:
-  image: 'tutum.co/maximeheckel/result-dceu:latest'
+  image: 'tutum.co/maximeheckel/result-dceu:staging'
   autoredeploy: true
   links:
     - redis
@@ -22,7 +22,8 @@ result-app:
   tags:
     - staging
 voting-app:
-  image: 'tutum.co/maximeheckel/voting-dceu:latest'
+  image: 'tutum.co/maximeheckel/voting-dceu:staging'
+  autoredeploy: true
   links:
     - redis
   tags:
