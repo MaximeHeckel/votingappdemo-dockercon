@@ -7,11 +7,11 @@ lb:
   roles:
     - global
   tags:
-    - prod
+    - staging
 redis:
   image: 'redis:latest'
   tags:
-    - prod
+    - staging
 result-app:
   image: 'tutum.co/maximeheckel/result-dceu:latest'
   autoredeploy: true
@@ -20,19 +20,11 @@ result-app:
   ports:
     - '5001:80'
   tags:
-    - prod
-visualizer:
-  image: 'tutum/visualizer:master'
-  environment:
-    - VISUALIZER_SHOW=false
-  ports:
-    - '5003:3000'
-  roles:
-    - global
+    - staging
 voting-app:
   image: 'tutum.co/maximeheckel/voting-dceu:latest'
   links:
     - redis
   tags:
-    - prod
+    - staging
   target_num_containers: 3
