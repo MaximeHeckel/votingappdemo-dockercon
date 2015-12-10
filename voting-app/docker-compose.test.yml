@@ -2,7 +2,7 @@ sut:
   image: this
   links:
     - redis
-  command: echo "Test pass!"
+  command: echo "TEST"
 redis:
   image: tutum/redis
   environment:
